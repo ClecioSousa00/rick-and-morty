@@ -1,3 +1,4 @@
+import { Header } from '@/components/Header'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Raleway } from 'next/font/google'
@@ -20,7 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={`${raleway.variable} font-sans`}>{children}</body>
+      <body className={`${raleway.variable} font-sans text-white`}>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }
