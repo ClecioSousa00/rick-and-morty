@@ -15,7 +15,7 @@ export const NavBar = () => {
   return (
     <>
       <nav
-        className={`absolute right-0 top-0 flex h-screen w-0 justify-center overflow-hidden  bg-dark transition-all duration-300 
+        className={`absolute right-0 top-0 z-20 flex h-screen w-0 justify-center overflow-hidden  bg-dark transition-all duration-300 
          md:static md:h-auto md:w-full md:bg-transparent  ${
            isOpen && ' w-full'
          }`}

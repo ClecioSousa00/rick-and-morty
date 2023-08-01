@@ -12,7 +12,7 @@ export const ToggleMenu = ({
   return (
     <button
       onClick={handleClickMenu}
-      className=" z-10 flex cursor-pointer flex-col gap-1 md:hidden "
+      className=" z-30 flex cursor-pointer flex-col gap-1 md:hidden "
     >
       <span
         className={`h-[2px] w-7 rounded bg-white transition-all ${
