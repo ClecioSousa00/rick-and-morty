@@ -3,11 +3,14 @@ import {
   CharacterListProps,
   CharacterDataProps,
 } from '@/types/dataCharactersType'
+import { url } from 'inspector'
 
-export const useGetCharactersList = () => {
-  const getCharactersList = async (): Promise<CharacterListProps> => {
+export const GetDataCharactersList = () => {
+  const getCharactersList = async (
+    url: string,
+  ): Promise<CharacterListProps> => {
     try {
-      const response = await axiosInstance.get('/character')
+      const response = await axiosInstance.get(`${url}`)
       const dataListCharacters: CharacterDataProps[] =
         response.data.results.map((character: CharacterDataProps) => ({
           id: character.id,

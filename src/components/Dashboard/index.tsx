@@ -1,8 +1,11 @@
 import { Container } from '@/components/Container'
 import { Searchbutton } from '@/components/SearchButton'
 import { CharacterList } from '../CharacterList'
+import { DashboardCharacters } from '../DashboardCharacters'
+import { getCharactersList } from '@/utils/getDataCharacters'
 
 export const Dashboard = () => {
+  // const dataCharacterslist = await getCharactersList('/character')
   return (
     <main className=" bg-main-background bg-cover bg-center bg-no-repeat pt-40 lg:pt-80">
       <Container>
@@ -11,7 +14,9 @@ export const Dashboard = () => {
             <h2 className="text-2xl font-semibold lg:text-4xl">Personagens</h2>
             <Searchbutton />
           </div>
-          <CharacterList />
+          {/* <CharacterList data={dataCharacterslist} /> */}
+
+          <DashboardCharacters />
         </section>
       </Container>
     </main>
