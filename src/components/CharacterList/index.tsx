@@ -13,7 +13,7 @@
 // }
 import { CardCharacter } from '../CardCharacter'
 import { CharacterListProps } from '@/types/dataCharactersType'
-import { ButtonPagination } from '../ButtonPagination'
+import { ButtonPagination } from '../LinkPagination'
 import { DashboardCharacters } from '../DashboardCharacters'
 import { getCharactersList } from '@/utils/getDataCharacters'
 

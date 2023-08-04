@@ -3,9 +3,15 @@ import { Searchbutton } from '@/components/SearchButton'
 import { CharacterList } from '../CharacterList'
 import { DashboardCharacters } from '../DashboardCharacters'
 import { getCharactersList } from '@/utils/getDataCharacters'
+import { CharacterListProps } from '@/types/dataCharactersType'
 
-export const Dashboard = () => {
+type DashboardProps = {
+  data: CharacterListProps
+}
+
+export const Dashboard = ({ data }: DashboardProps) => {
   // const dataCharacterslist = await getCharactersList('/character')
+
   return (
     <main className=" bg-main-background bg-cover bg-center bg-no-repeat pt-40 lg:pt-80">
       <Container>
@@ -16,7 +22,7 @@ export const Dashboard = () => {
           </div>
           {/* <CharacterList data={dataCharacterslist} /> */}
 
-          <DashboardCharacters />
+          <DashboardCharacters data={data} />
         </section>
       </Container>
     </main>

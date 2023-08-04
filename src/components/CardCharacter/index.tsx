@@ -40,7 +40,7 @@ export const CardCharacter = ({ data }: CardCharacterProps) => {
         <div className="flex items-center justify-between px-3 pb-5">
           <div className="flex items-center gap-2  ">
             <div
-              className={`h-3 w-3 rounded-full bg-secondary ${
+              className={`h-3 w-3 rounded-full ${
                 data.status === 'Alive' ? 'bg-secondary' : 'bg-danger'
               }`}
             ></div>
