@@ -11,6 +11,9 @@ export default async function Home({
 }) {
   const page =
     typeof searchParams.page === 'string' ? Number(searchParams.page) : 1
+
+  const search =
+    typeof searchParams.search === 'string' ? searchParams.search : undefined
   console.log(page)
   const dataCharacterslist = await getCharactersList(`/character/?page=${page}`)
   console.log(dataCharacterslist)

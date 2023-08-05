@@ -1,6 +1,5 @@
 import { Container } from '@/components/Container'
 import { Searchbutton } from '@/components/SearchButton'
-import { CharacterList } from '../CharacterList'
 import { DashboardCharacters } from '../DashboardCharacters'
 import { getCharactersList } from '@/utils/getDataCharacters'
 import { CharacterListProps } from '@/types/dataCharactersType'

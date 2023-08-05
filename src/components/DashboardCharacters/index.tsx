@@ -1,8 +1,5 @@
 import { CharacterListProps } from '@/types/dataCharactersType'
 import { CardCharacter } from '../CardCharacter'
-import { useEffect, useState } from 'react'
-import { getCharactersList } from '@/utils/getDataCharacters'
-import Link from 'next/link'
 import { LinkPagination } from '../LinkPagination'
 
 type DashboardCharactersProps = {

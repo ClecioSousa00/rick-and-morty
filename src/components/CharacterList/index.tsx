@@ -11,33 +11,33 @@
 //     </>
 //   )
 // }
-import { CardCharacter } from '../CardCharacter'
-import { CharacterListProps } from '@/types/dataCharactersType'
-import { ButtonPagination } from '../LinkPagination'
-import { DashboardCharacters } from '../DashboardCharacters'
-import { getCharactersList } from '@/utils/getDataCharacters'
+// import { CardCharacter } from '../CardCharacter'
+// import { CharacterListProps } from '@/types/dataCharactersType'
+// import { ButtonPagination } from '../LinkPagination'
+// import { DashboardCharacters } from '../DashboardCharacters'
+// import { getCharactersList } from '@/utils/getDataCharacters'
 
-type Props = {
-  data: CharacterListProps
-}
+// type Props = {
+//   data: CharacterListProps
+// }
 
-export const CharacterList = async ({ data }: Props) => {
-  // const dataCharacterslist = await getCharactersList('/character')
+// export const CharacterList = async ({ data }: Props) => {
+//   // const dataCharacterslist = await getCharactersList('/character')
 
-  return (
-    <>
-      <div className="mt-48 grid grid-cols-1 place-items-center gap-y-36 lg:grid-cols-3">
-        {data?.listCharacters.map((character) => (
-          <CardCharacter key={character.id} data={character} />
-        ))}
-      </div>
-      <div className="mt-20 flex items-center justify-center gap-10">
-        <ButtonPagination text="Voltar" nameIcon="arrowLeft" />
-        <ButtonPagination text="Avançar" nameIcon="arrowRight" />
-      </div>
-    </>
-  )
-}
+//   return (
+//     <>
+//       <div className="mt-48 grid grid-cols-1 place-items-center gap-y-36 lg:grid-cols-3">
+//         {data?.listCharacters.map((character) => (
+//           <CardCharacter key={character.id} data={character} />
+//         ))}
+//       </div>
+//       <div className="mt-20 flex items-center justify-center gap-10">
+//         <ButtonPagination text="Voltar" nameIcon="arrowLeft" />
+//         <ButtonPagination text="Avançar" nameIcon="arrowRight" />
+//       </div>
+//     </>
+//   )
+// }
 // import { GetDataCharactersList } from '@/lib/GetCharactersList'
 // import { CardCharacter } from '../CardCharacter'
 // import { CharacterDataProps } from '@/types/dataCharactersType'
