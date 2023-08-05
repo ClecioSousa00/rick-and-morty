@@ -1,17 +1,28 @@
 'use client'
 
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { FaSistrix } from 'react-icons/fa6'
-import { useRouter } from 'next/navigation'
 
-export const Searchbutton = () => {
+type SearchButtonProps = {
+  handleGetCharacter: (url: string) => void
+}
+
+export const Searchbutton = ({ handleGetCharacter }: SearchButtonProps) => {
   const [search, setSearch] = useState('')
-  const router = useRouter()
+
   console.log(search)
-  // const handleSearchCharacter = () => {}
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault()
+    console.log('Função no search button')
+    handleGetCharacter(`/character/?name=${search}`)
+  }
 
   return (
-    <div className="group relative  h-14 w-full max-w-xs self-center">
+    <form
+      onSubmit={handleSubmit}
+      className="group relative  h-14 w-full max-w-xs self-center"
+    >
       <div className="absolute -inset-0.5  rounded-lg bg-border-gradient opacity-50 blur transition-all group-hover:opacity-100"></div>
       <div className=" relative flex h-full w-full  items-center justify-between  rounded-3xl bg-primary px-4">
         <input
@@ -21,8 +32,10 @@ export const Searchbutton = () => {
           value={search}
           onChange={(event) => setSearch(event.target.value)}
         />
-        <FaSistrix />
+        <button type="submit">
+          <FaSistrix />
+        </button>
       </div>
-    </div>
+    </form>
   )
 }

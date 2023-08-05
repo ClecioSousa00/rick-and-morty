@@ -1,29 +1,59 @@
-import { Container } from '@/components/Container'
+'use client'
 import { Searchbutton } from '@/components/SearchButton'
 import { DashboardCharacters } from '../DashboardCharacters'
 import { getCharactersList } from '@/utils/getDataCharacters'
 import { CharacterListProps } from '@/types/dataCharactersType'
+import { useState, useEffect } from 'react'
+import { MessageEmptySearch } from '../MessageEmptySearch'
 
-type DashboardProps = {
-  data: CharacterListProps
-}
+export const Dashboard = () => {
+  const [characterList, setCharacterList] = useState<CharacterListProps>(
+    {} as CharacterListProps,
+  )
+  const [page, setPage] = useState('/character')
+  const [isLoading, setIsLoading] = useState(false)
 
-export const Dashboard = ({ data }: DashboardProps) => {
-  // const dataCharacterslist = await getCharactersList('/character')
+  const getMoreCharacters = async (url: string) => {
+    try {
+      const response = await getCharactersList(url)
+      console.log(response)
+
+      setCharacterList(response)
+      setIsLoading(true)
+    } catch (error) {
+      setCharacterList({} as CharacterListProps)
+    }
+
+    const response = await getCharactersList(url)
+    console.log(response)
+
+    setCharacterList(response)
+    setIsLoading(true)
+  }
+  useEffect(() => {
+    getMoreCharacters(page)
+    console.log('executou o effect', page)
+  }, [page])
+
+  const changePage = (url: string) => {
+    setPage(url)
+  }
 
   return (
-    <main className=" bg-main-background bg-cover bg-center bg-no-repeat pt-40 lg:pt-80">
-      <Container>
-        <section>
-          <div className=" flex flex-col gap-y-10 lg:flex-row lg:justify-between lg:gap-y-0">
-            <h2 className="text-2xl font-semibold lg:text-4xl">Personagens</h2>
-            <Searchbutton />
-          </div>
-          {/* <CharacterList data={dataCharacterslist} /> */}
-
-          <DashboardCharacters data={data} />
-        </section>
-      </Container>
-    </main>
+    <section>
+      <div className=" flex flex-col gap-y-10 lg:flex-row lg:justify-between lg:gap-y-0">
+        <h2 className="text-2xl font-semibold lg:text-4xl">Personagens</h2>
+        <Searchbutton handleGetCharacter={changePage} />
+      </div>
+      {characterList.listCharacters?.length > 0 ? (
+        <DashboardCharacters
+          data={characterList}
+          isLoading={isLoading}
+          changePage={changePage}
+        />
+      ) : (
+        <MessageEmptySearch />
+      )}
+    </section>
   )
 }

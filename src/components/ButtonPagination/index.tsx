@@ -1,25 +1,23 @@
 // 'use client'
-
-import Link, { LinkProps } from 'next/link'
+import { ButtonHTMLAttributes } from 'react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6'
 
-type LinkPaginationProps = {
+type ButtonPaginationProps = {
   text: string
   nameIcon: 'arrowLeft' | 'arrowRight'
-} & LinkProps
-
+} & ButtonHTMLAttributes<HTMLButtonElement>
 const icons = {
   arrowLeft: <FaArrowLeft />,
   arrowRight: <FaArrowRight />,
 }
 
-export const LinkPagination = ({
+export const ButtonPagination = ({
   text,
   nameIcon,
   ...props
-}: LinkPaginationProps) => {
+}: ButtonPaginationProps) => {
   return (
-    <Link
+    <button
       className={`flex h-14 w-full max-w-[180px] items-center justify-center gap-4 rounded-lg bg-secondary-dark text-xl ${
         nameIcon === 'arrowRight' ? 'flex-row-reverse' : ''
       }`}
@@ -27,6 +25,6 @@ export const LinkPagination = ({
     >
       {icons[nameIcon]}
       {text}
-    </Link>
+    </button>
   )
 }
