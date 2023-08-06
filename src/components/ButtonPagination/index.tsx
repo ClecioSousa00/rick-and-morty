@@ -1,4 +1,3 @@
-// 'use client'
 import { ButtonHTMLAttributes } from 'react'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6'
 

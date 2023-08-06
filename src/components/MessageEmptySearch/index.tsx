@@ -5,7 +5,7 @@ export const MessageEmptySearch = () => {
   return (
     <div className="mt-10 flex flex-col items-center justify-center">
       <Image
-        className="w-60"
+        className="w-60 animate-pulse"
         src={rickImage}
         alt="Imagen do rosto do rick de cor cinza"
       />

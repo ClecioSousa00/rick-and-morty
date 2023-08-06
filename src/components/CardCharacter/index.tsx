@@ -19,7 +19,7 @@ export const CardCharacter = ({ data }: CardCharacterProps) => {
               width={300}
               height={300}
               priority
-              unoptimized={true}
+              unoptimized
             />
           </div>
           <div className="mt-[4.75rem] space-y-1 ">

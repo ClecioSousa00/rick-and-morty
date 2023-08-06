@@ -16,7 +16,9 @@ export const DashboardCharacters = ({
   data,
 }: DashboardCharactersProps) => {
   const handleClick = (url: string) => {
-    changePage(url)
+    console.log(url)
+    const page = url.substring(url.indexOf('?'))
+    changePage(`/character${page}`)
   }
 
   return (
