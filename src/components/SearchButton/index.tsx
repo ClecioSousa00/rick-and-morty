@@ -1,6 +1,6 @@
 'use client'
 
-import { FormEvent, useCallback, useState, useRef } from 'react'
+import { FormEvent, useCallback, useRef } from 'react'
 import { FaSistrix } from 'react-icons/fa6'
 
 type SearchButtonProps = {
