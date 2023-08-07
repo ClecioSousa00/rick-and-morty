@@ -1,6 +1,6 @@
 'use client'
 
-import { FormEvent, useCallback, useRef } from 'react'
+import { FormEvent, useState } from 'react'
 import { FaSistrix } from 'react-icons/fa6'
 
 type SearchButtonProps = {
@@ -8,21 +8,15 @@ type SearchButtonProps = {
 }
 
 export const Searchbutton = ({ handleGetCharacter }: SearchButtonProps) => {
-  // const [search, setSearch] = useState('')
-  const inputSearch = useRef<HTMLInputElement>(null)
+  const [search, setSearch] = useState('')
 
-  console.log(inputSearch)
-
-  const handleSubmit = useCallback(
-    (event: FormEvent) => {
-      event.preventDefault()
-      if (!inputSearch.current?.value) return
-      console.log('Função no search button', inputSearch.current?.value)
-      handleGetCharacter(`/character/?name=${inputSearch.current?.value}`)
-      inputSearch.current.value = ''
-    },
-    [handleGetCharacter],
-  )
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault()
+    if (!search) return
+    console.log('Função no search button', search)
+    handleGetCharacter(`/character/?name=${search}`)
+    setSearch('')
+  }
 
   return (
     <form
@@ -35,9 +29,8 @@ export const Searchbutton = ({ handleGetCharacter }: SearchButtonProps) => {
           className=" mr-2 flex-1 bg-transparent outline-none"
           type="text"
           placeholder="Buscar..."
-          // value={search}
-          // onChange={(event) => setSearch(event.target.value)}
-          ref={inputSearch}
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
         />
         <button type="submit">
           <FaSistrix />
