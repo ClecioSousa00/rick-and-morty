@@ -2,6 +2,8 @@ import { Header } from '@/components/Header'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Raleway } from 'next/font/google'
+import { Providers } from '@/providers/provider'
+import { FavoriteProvider } from '@/contexts/favoritesContext'
 
 const raleway = Raleway({
   subsets: ['latin'],
@@ -22,8 +24,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${raleway.variable} font-sans text-white`}>
-        <Header />
-        {children}
+        <FavoriteProvider>
+          <Header />
+          {children}
+        </FavoriteProvider>
       </body>
     </html>
   )

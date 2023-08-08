@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import { FaHeart, FaRegHeart } from 'react-icons/fa6'
 import { CharacterDataProps } from '@/types/dataCharactersType'
+import { ButtonFavorite } from '../buttonFavorite'
 
 type CardCharacterProps = {
   data: CharacterDataProps
@@ -45,9 +45,7 @@ export const CardCharacter = ({ data }: CardCharacterProps) => {
               ></div>
               <p className="text-center text-lg">{data.status}</p>
             </div>
-            <button className="cursor-pointer ">
-              <FaRegHeart size={24} />
-            </button>
+            <ButtonFavorite character={data} />
           </div>
         </div>
       </div>
