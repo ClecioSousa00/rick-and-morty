@@ -28,7 +28,7 @@ export const FavoriteProvider = ({ children }: FavoriteProviderProps) => {
   >([])
 
   useEffect(() => {
-    if (character.length) {
+    if (character) {
       setCharactersFavoritesList([...character])
     }
   }, [character])
