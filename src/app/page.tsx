@@ -3,7 +3,7 @@ import { Dashboard } from '@/components/Dashboard'
 
 export default async function Home() {
   return (
-    <main className=" bg-dark pt-40 lg:pt-10">
+    <main className=" bg-main-gradient py-40 lg:pt-10">
       <Container>
         <Dashboard />
       </Container>

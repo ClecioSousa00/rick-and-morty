@@ -1,11 +1,11 @@
 'use client'
 import { useState } from 'react'
-
-import { ToggleMenu } from './ToggleMenu'
-import icon from '@/assets/icon.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+
+import { ToggleMenu } from './ToggleMenu'
+import icon from '@/assets/icon.png'
 
 const links = [
   {
@@ -17,7 +17,7 @@ const links = [
     name: 'Favoritos',
   },
   {
-    href: '#',
+    href: '#contacts',
     name: 'Contatos',
   },
 ]
@@ -31,6 +31,24 @@ export const NavBar = () => {
     setIsOpen(!isOpen)
   }
 
+  const generateLinksMenu = () => {
+    return links.map((link, index) => {
+      const isActive = pathname === link.href
+      return (
+        <li
+          key={index}
+          className={`rounded-lg px-4 py-2 text-xl ${
+            isActive ? ' bg-secondary-dark' : 'text-white/60'
+          }`}
+        >
+          <Link onClick={() => handleClickMenu()} href={link.href}>
+            {link.name}
+          </Link>
+        </li>
+      )
+    })
+  }
+
   return (
     <>
       <nav
@@ -40,21 +58,7 @@ export const NavBar = () => {
          }`}
       >
         <ul className="mt-20 space-y-5 text-center md:mt-0 md:flex md:flex-1 md:justify-center md:gap-20 md:space-y-0">
-          {links.map((link, index) => {
-            const isActive = pathname === link.href
-            return (
-              <li
-                key={index}
-                className={`rounded-lg px-4 py-2 text-xl ${
-                  isActive && ' bg-secondary-dark'
-                }`}
-              >
-                <Link onClick={() => handleClickMenu()} href={link.href}>
-                  {link.name}
-                </Link>
-              </li>
-            )
-          })}
+          {generateLinksMenu()}
         </ul>
       </nav>
       <Image

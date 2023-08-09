@@ -1,9 +1,10 @@
-import { Header } from '@/components/Header'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Raleway } from 'next/font/google'
-import { Providers } from '@/providers/provider'
+
+import { Header } from '@/components/Header'
 import { FavoriteProvider } from '@/contexts/favoritesContext'
+import { Footer } from '@/components/Footer'
 
 const raleway = Raleway({
   subsets: ['latin'],
@@ -22,11 +23,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className="scroll-smooth">
       <body className={`${raleway.variable} font-sans text-white`}>
         <FavoriteProvider>
           <Header />
           {children}
+          <Footer />
         </FavoriteProvider>
       </body>
     </html>

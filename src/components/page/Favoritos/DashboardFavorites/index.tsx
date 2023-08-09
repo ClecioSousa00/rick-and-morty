@@ -1,15 +1,15 @@
 'use client'
 
 import { useFavoriteContext } from '@/contexts/favoritesContext'
-import { CardCharacter } from '../CardCharacter'
-import { MortySvg } from '../icons/MortySvg'
+import { CardCharacter } from '../../../CardCharacter'
+import { MortySvg } from '../../../icons/MortySvg'
 
 export const DashboardFavorites = () => {
   const { charactersFavoritesList } = useFavoriteContext()
   return (
     <section className="lg:mt-44">
       {charactersFavoritesList.length > 0 ? (
-        <div className="mt-48 grid grid-cols-1 place-items-center gap-y-36 pb-10 lg:grid-cols-3">
+        <div className="mt-60 grid grid-cols-1 place-items-center gap-y-36 pb-10 md:grid-cols-2 lg:grid-cols-4">
           {charactersFavoritesList.map((character) => (
             <CardCharacter key={character.id} data={character} />
           ))}
