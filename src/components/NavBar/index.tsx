@@ -4,9 +4,28 @@ import { useState } from 'react'
 import { ToggleMenu } from './ToggleMenu'
 import icon from '@/assets/icon.png'
 import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+
+const links = [
+  {
+    href: '/',
+    name: 'Home',
+  },
+  {
+    href: '/favorites',
+    name: 'Favoritos',
+  },
+  {
+    href: '#',
+    name: 'Contatos',
+  },
+]
 
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+  console.log(pathname)
 
   const handleClickMenu = () => {
     setIsOpen(!isOpen)
@@ -21,9 +40,21 @@ export const NavBar = () => {
          }`}
       >
         <ul className="mt-20 space-y-5 text-center md:mt-0 md:flex md:flex-1 md:justify-center md:gap-20 md:space-y-0">
-          <li className="text-xl">Home</li>
-          <li className="text-xl">Favoritos</li>
-          <li className="text-xl">Contatos</li>
+          {links.map((link, index) => {
+            const isActive = pathname === link.href
+            return (
+              <li
+                key={index}
+                className={`rounded-lg px-4 py-2 text-xl ${
+                  isActive && ' bg-secondary-dark'
+                }`}
+              >
+                <Link onClick={() => handleClickMenu()} href={link.href}>
+                  {link.name}
+                </Link>
+              </li>
+            )
+          })}
         </ul>
       </nav>
       <Image

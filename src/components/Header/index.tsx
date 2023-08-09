@@ -21,8 +21,8 @@ export const Header = () => {
           <div className=" flex h-3/4 flex-col items-center justify-center">
             <div className="flex flex-col items-center justify-center ">
               <Image className="w-80" src={logo} alt="Logo do rick and morty" />
-              <p className="mt-10 w-full max-w-lg text-center ">
-                &quot; Rick and Morty &quot; é uma série animada de comédia e
+              <p className="mt-10 w-full max-w-lg text-center tracking-wider">
+                &quot;Rick and Morty&quot; é uma série animada de comédia e
                 ficção científica criada por Justin Roiland e Dan Harmon. A
                 trama segue as aventuras de Morty Smith, um adolescente comum, e
                 seu avô, Rick Sanchez, um cientista genial e alcoólatra. Juntos,
@@ -31,7 +31,7 @@ export const Header = () => {
               </p>
             </div>
             <Image
-              className="absolute -bottom-48 z-10 lg:-bottom-[26rem]"
+              className="absolute -bottom-48 z-10 lg:-bottom-[22rem]"
               src={heroImage}
               alt="Rick and Morty saindo de um portal"
             />

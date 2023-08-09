@@ -2,6 +2,7 @@ import { CharacterListProps } from '@/types/dataCharactersType'
 
 import { CardCharacter } from '../CardCharacter'
 import { ButtonPagination } from '../ButtonPagination'
+import { Loading } from '../Loading'
 
 type DashboardCharactersProps = {
   data: CharacterListProps
@@ -25,14 +26,34 @@ export const DashboardCharacters = ({
   //   return <Loading />
   // }
 
+  const generateCardsCharacters = () => {
+    return (
+      <div className="mt-60 grid grid-cols-1 place-items-center gap-y-36 lg:grid-cols-3">
+        {data.listCharacters.map((character) => (
+          <CardCharacter key={character.id} data={character} />
+        ))}
+      </div>
+    )
+  }
+
   return (
     <>
-      <div className="mt-48 grid grid-cols-1 place-items-center gap-y-36 lg:grid-cols-3">
-        {!isLoading &&
+      {isLoading ? (
+        <div className="mt-28 flex items-center justify-center">
+          <Loading />
+        </div>
+      ) : (
+        generateCardsCharacters()
+      )}
+      {/* <div className="mt-60 grid grid-cols-1 place-items-center gap-y-36 lg:grid-cols-3">
+        {isLoading ? (
+          <Loading />
+        ) : (
           data.listCharacters.map((character) => (
             <CardCharacter key={character.id} data={character} />
-          ))}
-      </div>
+          ))
+        )}
+      </div> */}
       <div className="mt-20 flex items-center justify-center gap-10">
         {data?.info?.prevPage && (
           <ButtonPagination

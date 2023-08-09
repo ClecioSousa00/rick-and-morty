@@ -11,7 +11,11 @@ export const Dashboard = () => {
   console.log(characterList)
 
   if (isLoading) {
-    return <Loading />
+    return (
+      <div className="mt-40 flex items-center justify-center">
+        <Loading />
+      </div>
+    )
   }
 
   return (
