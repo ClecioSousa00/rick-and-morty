@@ -1,9 +1,9 @@
 import Image from 'next/image'
 
+import { NavBar } from '@/components/NavBar'
+
 import logo from '@/assets/logo.png'
 import heroImage from '@/assets/hero-image.png'
-
-import { NavBar } from '../NavBar'
 
 export const Header = () => {
   return (
@@ -20,11 +20,7 @@ export const Header = () => {
           </header>
           <div className=" flex h-3/4 flex-col items-center justify-center">
             <div className="flex flex-col items-center justify-center ">
-              <Image
-                className="w-80   "
-                src={logo}
-                alt="Logo do rick and morty"
-              />
+              <Image className="w-80" src={logo} alt="Logo do rick and morty" />
               <p className="mt-10 w-full max-w-lg text-center tracking-wider">
                 &quot;Rick and Morty&quot; é uma série animada de comédia e
                 ficção científica criada por Justin Roiland e Dan Harmon. A

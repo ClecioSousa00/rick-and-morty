@@ -13,10 +13,8 @@ export const useGetDataCharacters = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   const getMoreCharacters = useCallback(async () => {
-    // setIsLoading(true)
     try {
       const response = await axiosInstance.get(page)
-      console.log(`url: ${page}`)
 
       const dataListCharacters: CharacterDataProps[] =
         response.data.results.map((character: CharacterDataProps) => ({
@@ -37,24 +35,20 @@ export const useGetDataCharacters = () => {
         listCharacters: dataListCharacters,
       }
       setCharacterList(dataInfos)
-      console.log(dataInfos)
     } catch (error) {
       setCharacterList({} as CharacterListProps)
-      console.log('Error ao fazer a request', error)
     } finally {
       setIsLoading(false)
     }
   }, [page])
 
   const changePage = (url: string) => {
-    console.log(url)
     setIsLoading(true)
     setPage(url)
   }
 
   useEffect(() => {
     getMoreCharacters()
-    console.log('executou o effect', page)
   }, [page, getMoreCharacters])
 
   return {

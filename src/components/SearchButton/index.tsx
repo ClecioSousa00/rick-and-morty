@@ -7,13 +7,12 @@ type SearchButtonProps = {
   handleGetCharacter: (url: string) => void
 }
 
-export const Searchbutton = ({ handleGetCharacter }: SearchButtonProps) => {
+export const SearchButton = ({ handleGetCharacter }: SearchButtonProps) => {
   const [search, setSearch] = useState('')
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
     if (!search) return
-    console.log('Função no search button', search)
     handleGetCharacter(`/character/?name=${search}`)
     setSearch('')
   }

@@ -11,7 +11,6 @@ export const useLocalStorage = () => {
       const data = await localStorage.getItem(key)
       const charactersList = JSON.parse(data as string)
       setCharacter(charactersList as CharacterDataProps[])
-      console.log(charactersList)
     }
     getCharacterLocalStorage()
   }, [])

@@ -25,7 +25,6 @@ const links = [
 export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
-  console.log(pathname)
 
   const handleClickMenu = () => {
     setIsOpen(!isOpen)

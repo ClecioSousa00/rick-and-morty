@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { CharacterDataProps } from '@/types/dataCharactersType'
-import { ButtonFavorite } from '../ButtonFavorite'
+import { ButtonFavorite } from '@/components/ButtonFavorite'
 
 type CardCharacterProps = {
   data: CharacterDataProps
@@ -8,9 +8,9 @@ type CardCharacterProps = {
 
 export const CardCharacter = ({ data }: CardCharacterProps) => {
   return (
-    <div className="group relative  h-80 w-64 ">
+    <div className="group relative h-80 w-64 ">
       <div className="absolute -inset-0.5  rounded-lg bg-border-gradient opacity-50 blur transition-all group-hover:opacity-100"></div>
-      <div className=" relative flex h-full w-full flex-col  rounded-3xl bg-primary ">
+      <div className=" relative flex h-full w-full flex-col rounded-3xl bg-primary px-1 ">
         <div className=" relative flex flex-1 flex-col items-center justify-between ">
           <div className="-mt-20 h-40 w-40 overflow-hidden rounded-[2.5rem]  shadow-lg shadow-secondary-dark transition-all duration-300 group-hover:scale-105">
             <Image
@@ -22,8 +22,8 @@ export const CardCharacter = ({ data }: CardCharacterProps) => {
               unoptimized
             />
           </div>
-          <div className="mt-3 space-y-1 ">
-            <p className="text-center text-3xl font-medium">{data.name}</p>
+          <div>
+            <p className=" text-center text-2xl font-medium">{data.name}</p>
             <p className="text-center text-xl">
               Espécie:{' '}
               <span className="text-lg font-medium">{data.species}</span>

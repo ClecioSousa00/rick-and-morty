@@ -1,5 +1,12 @@
+import { Metadata } from 'next'
+
 import { Container } from '@/components/Container'
 import { DashboardFavorites } from '@/components/page/Favoritos/DashboardFavorites'
+
+export const metadata: Metadata = {
+  title: 'Rick and Morty - Favoritos',
+  description: 'Aqui você pode salvar os seus personagens preferidos da série',
+}
 
 export default function favorites() {
   return (

@@ -36,11 +36,8 @@ export const ButtonFavorite = ({ character }: ButtonFavoriteProps) => {
       (characterFavorite) => characterFavorite.id === character.id,
     )
     if (!characterIsFavorite) {
-      console.log(characterIsFavorite)
-
       return <FaRegHeart size={24} />
     }
-    console.log(characterIsFavorite)
     return <FaHeart size={24} />
   }
 

@@ -13,8 +13,9 @@ const raleway = Raleway({
 })
 
 export const metadata: Metadata = {
-  title: 'Rick and Morty',
-  description: 'Personagens de Rick and Morty',
+  title: 'Rick and Morty - Personagens',
+  description:
+    'Explore a plataforma de listagem e busca de personagens de Rick and Morty. Adicione seus favoritos e mergulhe no universo da série!',
 }
 
 export default function RootLayout({

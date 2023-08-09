@@ -1,10 +1,8 @@
-// import { ButtonHTMLAttributes } from 'react'
-
 type ToggleMenuProps = {
   menuIsOpen: boolean
   handleClickMenu: () => void
 }
-// & ButtonHTMLAttributes<HTMLButtonElement>
+
 export const ToggleMenu = ({
   menuIsOpen,
   handleClickMenu,
