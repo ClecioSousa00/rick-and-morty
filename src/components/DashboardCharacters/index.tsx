@@ -3,20 +3,31 @@ import { CharacterListProps } from '@/types/dataCharactersType'
 import { CardCharacter } from '@/components/CardCharacter'
 import { ButtonPagination } from '@/components/ButtonPagination'
 import { Loading } from '@/components/Loading'
+import { RefObject, useRef } from 'react'
 
 type DashboardCharactersProps = {
   data: CharacterListProps
   isLoading: boolean
   changePage: (url: string) => void
+  dashboardRef: RefObject<HTMLDivElement>
 }
 
 export const DashboardCharacters = ({
   changePage,
   isLoading,
   data,
+  dashboardRef,
 }: DashboardCharactersProps) => {
   const handleClick = (url: string) => {
     const [, page] = url.split('?')
+
+    if (dashboardRef.current) {
+      console.log(dashboardRef.current)
+      dashboardRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      })
+    }
     changePage(`/character?${page}`)
   }
 
@@ -32,6 +43,7 @@ export const DashboardCharacters = ({
 
   return (
     <>
+      <div></div>
       {isLoading ? (
         <div className="mt-28 flex items-center justify-center">
           <Loading />
