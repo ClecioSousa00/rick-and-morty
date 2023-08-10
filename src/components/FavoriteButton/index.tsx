@@ -7,7 +7,7 @@ type ButtonFavoriteProps = {
   character: CharacterDataProps
 }
 
-export const ButtonFavorite = ({ character }: ButtonFavoriteProps) => {
+export const FavoriteButton = ({ character }: ButtonFavoriteProps) => {
   const {
     charactersFavoritesList,
     addCharactersToFavorites,

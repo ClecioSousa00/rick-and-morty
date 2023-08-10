@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { CharacterDataProps } from '@/types/dataCharactersType'
-import { ButtonFavorite } from '../ButtonFavorite'
+import { FavoriteButton } from '../FavoriteButton'
 
 type CardCharacterProps = {
   data: CharacterDataProps
@@ -45,7 +45,7 @@ export const CardCharacter = ({ data }: CardCharacterProps) => {
               ></div>
               <p className="text-center text-lg">{data.status}</p>
             </div>
-            <ButtonFavorite character={data} />
+            <FavoriteButton character={data} />
           </div>
         </div>
       </div>
