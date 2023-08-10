@@ -3,7 +3,7 @@ import { CharacterListProps } from '@/types/dataCharactersType'
 import { CardCharacter } from '@/components/CardCharacter'
 import { ButtonPagination } from '@/components/ButtonPagination'
 import { Loading } from '@/components/Loading'
-import { RefObject, useRef } from 'react'
+import { RefObject } from 'react'
 
 type DashboardCharactersProps = {
   data: CharacterListProps
@@ -22,7 +22,6 @@ export const DashboardCharacters = ({
     const [, page] = url.split('?')
 
     if (dashboardRef.current) {
-      console.log(dashboardRef.current)
       dashboardRef.current.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
