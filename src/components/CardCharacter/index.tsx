@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { CharacterDataProps } from '@/types/dataCharactersType'
-import { ButtonFavorite } from '@/components/ButtonFavorite'
+import { ButtonFavorite } from '../ButtonFavorite'
 
 type CardCharacterProps = {
   data: CharacterDataProps
