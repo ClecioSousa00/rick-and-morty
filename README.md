@@ -1,34 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Listagem e busca de Personagens do Rick and Morty
+![image](https://github.com/ClecioSousa00/rick-and-morty/assets/123471873/890ea11a-11e6-4017-8e67-60adc7bf8767)
 
-## Getting Started
 
-First, run the development server:
+## Projeto
+Este projeto é uma plataforma interativa que oferece uma variedade de funcionalidades relacionadas ao universo de "Rick and Morty". Utilizando a API oficial da série  [Rick and Morty](https://rickandmortyapi.com/). Este projeto foi feito com a finalidade de poder praticar mais sobre os conhecimentos obtidos.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Funcionalidades
+* Listagem de Personagens: A plataforma permite aos usuários explorar uma lista completa de personagens da série "Rick and Morty". A lista é uma paginação de next e prev com 20 personagens cada.
+* Adição aos Favoritos: Cada cartão de personagem exibe uma opção para adicionar o personagem aos favoritos. Os usuários podem selecionar seus personagens favoritos e acessá-los na seção de favoritos. Dados salvos no localStorage.
+* Funcionalidade de Busca: Para encontrar um personagem específico, os usuários podem usar a funcionalidade de busca. Ao inserir o nome os resultados correspondentes serão exibidos.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tecnologias
+* React
+* Nextjs
+* Typescript
+* Tailwind
+* Axios
+* Context Api
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* Acesse o projeto [Rick and Morty](https://rick-and-morty-42r2bwumj-cleciosousa00.vercel.app)
