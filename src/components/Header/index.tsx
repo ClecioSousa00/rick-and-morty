@@ -1,9 +1,9 @@
 import Image from 'next/image'
-
 import { NavBar } from '@/components/NavBar'
 
 import logo from '@/assets/logo.png'
 import heroImage from '@/assets/hero-image.png'
+import Link from 'next/link'
 
 export const Header = () => {
   return (
@@ -11,11 +11,13 @@ export const Header = () => {
       <div className="h-full w-full bg-gradient-hero">
         <div className="relative h-full  px-5 py-5 2xl:container lg:px-14 lg:py-10 2xl:mx-auto">
           <header className="flex items-center justify-between">
-            <Image
-              className="w-24 md:w-36"
-              src={logo}
-              alt="Logo do rick and morty"
-            />
+            <Link href={'/'}>
+              <Image
+                className="w-24 md:w-36"
+                src={logo}
+                alt="Logo do rick and morty"
+              />
+            </Link>
             <NavBar />
           </header>
           <div className=" flex h-3/4 flex-col items-center justify-center">

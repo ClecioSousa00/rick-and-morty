@@ -5,8 +5,16 @@ import { FavoriteButton } from '../FavoriteButton'
 type CardCharacterProps = {
   data: CharacterDataProps
 }
+const charactersStatus = {
+  Alive: 'bg-secondary',
+  unknown: 'bg-gray-500',
+  Dead: 'bg-danger',
+}
+type Key = keyof typeof charactersStatus
 
 export const CardCharacter = ({ data }: CardCharacterProps) => {
+  const colorStatus = data.status as Key
+
   return (
     <div className="group relative h-80 w-64 ">
       <div className="absolute -inset-0.5  rounded-lg bg-border-gradient opacity-50 blur transition-all group-hover:opacity-100"></div>
@@ -39,9 +47,7 @@ export const CardCharacter = ({ data }: CardCharacterProps) => {
           <div className="flex w-full items-center justify-between  px-3 pb-5">
             <div className="flex items-center gap-2  ">
               <div
-                className={`h-3 w-3 rounded-full ${
-                  data.status === 'Alive' ? 'bg-secondary' : 'bg-danger'
-                }`}
+                className={`h-3 w-3 rounded-full ${charactersStatus[colorStatus]}`}
               ></div>
               <p className="text-center text-lg">{data.status}</p>
             </div>
