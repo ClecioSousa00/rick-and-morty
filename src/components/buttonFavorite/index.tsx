@@ -46,7 +46,7 @@ export const ButtonFavorite = ({ character }: ButtonFavoriteProps) => {
       onClick={() => {
         handleToggleFavorite()
       }}
-      className="cursor-pointer "
+      className="cursor-pointer"
     >
       {changeIconFavorite()}
     </button>
