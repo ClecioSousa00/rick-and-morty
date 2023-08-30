@@ -25,6 +25,7 @@ export const SearchButton = ({ handleGetCharacter }: SearchButtonProps) => {
       <div className="absolute -inset-0.5  rounded-lg bg-border-gradient opacity-50 blur transition-all group-hover:opacity-100"></div>
       <div className=" relative flex h-full w-full  items-center justify-between  rounded-3xl bg-primary px-4">
         <input
+          data-test="input-search"
           className=" mr-2 flex-1 bg-transparent outline-none"
           type="text"
           placeholder="Buscar..."

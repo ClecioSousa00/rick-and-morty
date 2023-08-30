@@ -16,7 +16,7 @@ export const CardCharacter = ({ data }: CardCharacterProps) => {
   const colorStatus = data.status as Key
 
   return (
-    <div className="group relative h-80 w-64 ">
+    <div data-test="card-character" className="group relative h-80 w-64 ">
       <div className="absolute -inset-0.5  rounded-lg bg-border-gradient opacity-50 blur transition-all group-hover:opacity-100"></div>
       <div className=" relative flex h-full w-full flex-col rounded-3xl bg-primary px-1 ">
         <div className=" relative flex flex-1 flex-col items-center justify-between ">
@@ -40,7 +40,7 @@ export const CardCharacter = ({ data }: CardCharacterProps) => {
               Gênero: <span className="text-lg font-medium">{data.gender}</span>
             </p>
             <p className="text-center text-lg">
-              Origen:{' '}
+              Origem:{' '}
               <span className="text-lg font-medium">{data.origin.name}</span>
             </p>
           </div>

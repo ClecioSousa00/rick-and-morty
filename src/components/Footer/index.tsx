@@ -61,12 +61,12 @@ export const Footer = () => {
 
             <div className="relative flex items-center justify-center overflow-hidden p-5 ">
               <Image
-                className="w-80 animate-spin-slow lg:w-96"
+                className="w-80 animate-spin-slow lg:w-72"
                 src={portalImage}
                 alt="portal do rick and morty"
               />
               <Image
-                className="absolute w-80 lg:w-96"
+                className="absolute w-80 lg:w-72"
                 src={rickAndMortyInPortal}
                 alt="rick a morty"
               />
